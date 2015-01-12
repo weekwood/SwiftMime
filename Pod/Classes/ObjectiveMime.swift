@@ -1,0 +1,64 @@
+//
+//  ObjectiveMime.swift
+//  ObjectiveMime
+//
+//  Created by di wu on 1/12/15.
+//
+//
+
+import Foundation
+
+private let sharedInstance = ObjectiveMime()
+
+class ObjectiveMime{
+    
+    var types = [NSString: NSString]()
+    var extensions = [NSString: NSString]()
+    
+    class var sharedManager : ObjectiveMime {
+        sharedInstance.load("mime")
+        return sharedInstance
+    }
+    
+    func define(map: NSDictionary){
+        
+        for type in map{
+            var exts: NSArray = type.value as NSArray
+            for var index = 0;index < exts.count; ++index {
+                self.types[exts[index] as NSString] = type.key as? NSString
+            }
+            
+            self.extensions[type.key as NSString] = exts[0] as? NSString;
+        }
+    }
+    
+    func load(filePath: String){
+        let path = NSBundle.mainBundle().pathForResource(filePath, ofType: "types")
+        var possibleContent = NSString(contentsOfFile:path!, encoding: NSUTF8StringEncoding, error: nil)
+        var lines = NSArray()
+        let map = NSMutableDictionary()
+        if let content = possibleContent {
+             lines = content.componentsSeparatedByString("\n")
+        }
+        for line in lines{
+            if line.hasPrefix("#"){
+                continue
+            }
+            var fields: NSArray = line.stringByReplacingOccurrencesOfString("\\s+", withString:" ", options: .RegularExpressionSearch, range: NSMakeRange(0, line.length)).componentsSeparatedByString(" ")
+            map[fields.firstObject as NSString] = fields.subarrayWithRange(NSMakeRange(1, fields.count-1))
+        }
+        self.define(map)
+        
+    }
+    
+    func lookupType(path: NSString) -> NSString{
+        let newPath = path.stringByReplacingOccurrencesOfString(".*[\\.\\/\\\\]", withString: "", options: .RegularExpressionSearch, range: NSMakeRange(0, path.length))
+        var ext: NSString = newPath
+        ext = ext.lowercaseString
+        return self.types[ext]!
+    }
+    
+    func lookupExtension(mimeType: NSString) -> NSString{
+        return self.extensions[mimeType]!
+    }
+}

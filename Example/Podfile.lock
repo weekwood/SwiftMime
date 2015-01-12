@@ -1,0 +1,14 @@
+PODS:
+  - ObjectiveMime (0.0.1)
+
+DEPENDENCIES:
+  - ObjectiveMime (from `../`)
+
+EXTERNAL SOURCES:
+  ObjectiveMime:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ObjectiveMime: 43d24b924872adb9e87c618a24987f76c762e9ed
+
+COCOAPODS: 0.36.0.beta.1

@@ -1,14 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-target 'ObjectiveMime', :exclusive => true do
+target 'Example', :exclusive => true do
   pod "ObjectiveMime", :path => "../"
-end
-
-target 'Tests', :exclusive => true do
-  pod "ObjectiveMime", :path => "../"
-
-  pod 'Specta', '~> 0.2.1'
-  pod 'Expecta'
-  pod 'FBSnapshotTestCase'
-  pod 'Expecta+Snapshots'
 end

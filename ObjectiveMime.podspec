@@ -9,27 +9,23 @@
 
 Pod::Spec.new do |s|
   s.name             = "ObjectiveMime"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of ObjectiveMime."
+  s.version          = "0.0.1"
+  s.summary          = "inspired from node-mime."
   s.description      = <<-DESC
-                       An optional longer description of ObjectiveMime
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                        inspired from node-mime.
+                        file from apache
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/ObjectiveMime"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/weekwood/ObjectiveMime"
   s.license          = 'MIT'
   s.author           = { "di wu" => "di.wu@me.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/ObjectiveMime.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/weekwood/ObjectiveMime.git", :tag => s.version.to_s }
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes'
+  s.source_files = 'Pod/Classes/*.swift'
   s.resource_bundles = {
-    'ObjectiveMime' => ['Pod/Assets/*.png']
+    'ObjectiveMime' => ['Pod/Assets/*.types']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
