@@ -17,6 +17,7 @@ class ObjectiveMime{
     
     class var sharedManager : ObjectiveMime {
         sharedInstance.load("mime")
+        sharedInstance.load("node")
         return sharedInstance
     }
     
@@ -24,6 +25,9 @@ class ObjectiveMime{
         
         for type in map{
             var exts: NSArray = type.value as NSArray
+            if(exts.count == 0){
+                println(type)
+            }
             for var index = 0;index < exts.count; ++index {
                 self.types[exts[index] as NSString] = type.key as? NSString
             }
@@ -45,7 +49,9 @@ class ObjectiveMime{
                 continue
             }
             var fields: NSArray = line.stringByReplacingOccurrencesOfString("\\s+", withString:" ", options: .RegularExpressionSearch, range: NSMakeRange(0, line.length)).componentsSeparatedByString(" ")
-            map[fields.firstObject as NSString] = fields.subarrayWithRange(NSMakeRange(1, fields.count-1))
+            if fields.firstObject?.length>0 {
+                map[fields.firstObject as NSString] = fields.subarrayWithRange(NSMakeRange(1, fields.count-1))
+            }
         }
         self.define(map)
         
