@@ -11,10 +11,6 @@ Pod::Spec.new do |s|
   s.name             = "ObjectiveMime"
   s.version          = "0.0.1"
   s.summary          = "inspired from node-mime."
-  s.description      = <<-DESC
-                        inspired from node-mime.
-                        file from apache
-                       DESC
   s.homepage         = "https://github.com/weekwood/ObjectiveMime"
   s.license          = 'MIT'
   s.author           = { "di wu" => "di.wu@me.com" }
@@ -24,9 +20,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/*.swift'
-  s.resource_bundles = {
-    'ObjectiveMime' => ['Pod/Assets/*.types']
-  }
+  s.resources = 'Pod/Assets/*.types'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

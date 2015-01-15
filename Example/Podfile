@@ -1,5 +1,0 @@
-source 'https://github.com/CocoaPods/Specs.git'
-
-target 'Example', :exclusive => true do
-  pod "ObjectiveMime", :path => "../"
-end

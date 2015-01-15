@@ -1,6 +1,0 @@
-framework module ObjectiveMime {
-  umbrella header "Pods-Example-ObjectiveMime-umbrella.h"
-
-  export *
-  module * { export * }
-}

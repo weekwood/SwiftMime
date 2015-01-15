@@ -11,18 +11,18 @@ import Foundation
 private let sharedInstance = ObjectiveMime()
 
 public class ObjectiveMime{
-    
+
     var types = [NSString: NSString]()
     var extensions = [NSString: NSString]()
-    
+
     public class var sharedManager : ObjectiveMime {
         sharedInstance.load("mime")
-        sharedInstance.load("node")
+//        sharedInstance.load("node")
         return sharedInstance
     }
-    
+
     func define(map: NSDictionary){
-        
+
         for type in map{
             var exts: NSArray = type.value as NSArray
             if(exts.count == 0){
@@ -31,13 +31,13 @@ public class ObjectiveMime{
             for var index = 0;index < exts.count; ++index {
                 self.types[exts[index] as NSString] = type.key as? NSString
             }
-            
+
             self.extensions[type.key as NSString] = exts[0] as? NSString;
         }
     }
-    
+
     func load(filePath: String){
-        let path = NSBundle.mainBundle().pathForResource(filePath, ofType: "types")
+        let path =  NSBundle(forClass: object_getClass(self)).pathForResource(filePath, ofType: "types")
         var possibleContent = NSString(contentsOfFile:path!, encoding: NSUTF8StringEncoding, error: nil)
         var lines = NSArray()
         let map = NSMutableDictionary()
@@ -54,16 +54,16 @@ public class ObjectiveMime{
             }
         }
         self.define(map)
-        
+
     }
-    
+
     public func lookupType(path: NSString) -> NSString{
         let newPath = path.stringByReplacingOccurrencesOfString(".*[\\.\\/\\\\]", withString: "", options: .RegularExpressionSearch, range: NSMakeRange(0, path.length))
         var ext: NSString = newPath
         ext = ext.lowercaseString
         return self.types[ext]!
     }
-    
+
     public func lookupExtension(mimeType: NSString) -> NSString{
         return self.extensions[mimeType]!
     }
