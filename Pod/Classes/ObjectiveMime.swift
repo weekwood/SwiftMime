@@ -17,7 +17,7 @@ public class ObjectiveMime{
 
     public class var sharedManager : ObjectiveMime {
         sharedInstance.load("mime")
-//        sharedInstance.load("node")
+        sharedInstance.load("node")
         return sharedInstance
     }
 
