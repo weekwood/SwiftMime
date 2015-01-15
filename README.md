@@ -11,7 +11,7 @@ inspired from [mime](https://github.com/broofa/node-mime)
 
 ## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+    ObjectiveMime.sharedManager.lookupExtension("text/html")
 
 ## Requirements
 
