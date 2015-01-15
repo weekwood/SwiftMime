@@ -10,12 +10,12 @@ import Foundation
 
 private let sharedInstance = ObjectiveMime()
 
-class ObjectiveMime{
+public class ObjectiveMime{
     
     var types = [NSString: NSString]()
     var extensions = [NSString: NSString]()
     
-    class var sharedManager : ObjectiveMime {
+    public class var sharedManager : ObjectiveMime {
         sharedInstance.load("mime")
         sharedInstance.load("node")
         return sharedInstance
@@ -57,14 +57,14 @@ class ObjectiveMime{
         
     }
     
-    func lookupType(path: NSString) -> NSString{
+    public func lookupType(path: NSString) -> NSString{
         let newPath = path.stringByReplacingOccurrencesOfString(".*[\\.\\/\\\\]", withString: "", options: .RegularExpressionSearch, range: NSMakeRange(0, path.length))
         var ext: NSString = newPath
         ext = ext.lowercaseString
         return self.types[ext]!
     }
     
-    func lookupExtension(mimeType: NSString) -> NSString{
+    public func lookupExtension(mimeType: NSString) -> NSString{
         return self.extensions[mimeType]!
     }
 }
