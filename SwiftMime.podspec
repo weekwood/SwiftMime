@@ -21,8 +21,4 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/Classes/*.swift'
   s.resources = 'Pod/Assets/*.types'
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
