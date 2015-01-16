@@ -8,13 +8,13 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = "ObjectiveMime"
-  s.version          = "0.0.1"
+  s.name             = "SwiftMime"
+  s.version          = "0.0.2"
   s.summary          = "inspired from node-mime."
   s.homepage         = "https://github.com/weekwood/ObjectiveMime"
   s.license          = 'MIT'
   s.author           = { "di wu" => "di.wu@me.com" }
-  s.source           = { :git => "https://github.com/weekwood/ObjectiveMime.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/weekwood/SwiftMime.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
