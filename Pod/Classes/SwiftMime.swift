@@ -1,21 +1,23 @@
 //
-//  ObjectiveMime.swift
-//  ObjectiveMime
+//  SwiftMime.swift
+//  SwiftMime
 //
 //  Created by di wu on 1/12/15.
 //
-//
+//  License
+//  Copyright (c) 2015 Di Wu
+//  Released under an MIT license: http://opensource.org/licenses/MIT
 
 import Foundation
 
-private let sharedInstance = ObjectiveMime()
+private let sharedInstance = SwiftMime()
 
-public class ObjectiveMime{
+public class SwiftMime{
 
     var types = [NSString: NSString]()
     var extensions = [NSString: NSString]()
 
-    public class var sharedManager : ObjectiveMime {
+    public class var sharedManager : SwiftMime {
         sharedInstance.load("mime")
         sharedInstance.load("node")
         return sharedInstance
