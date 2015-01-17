@@ -9,7 +9,8 @@ inspired from [mime](https://github.com/broofa/node-mime)
 ## Usage
 
     SwiftMime.sharedManager.lookupExtension("text/html")
-    
+    SwiftMime.sharedManager.lookupType("pdf")
+
 ## Requirements
 
 ## Installation
@@ -26,4 +27,3 @@ di wu, di.wu@me.com
 ## License
 
 SwiftMime is available under the MIT license. See the LICENSE file for more info.
-
