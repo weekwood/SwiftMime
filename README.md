@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/weekwood/SwiftMime.png?label=ready&title=Ready)](https://waffle.io/weekwood/SwiftMime)
 # SwiftMime
 
 [![Version](https://img.shields.io/cocoapods/v/ObjectiveMime.svg?style=flat)](http://cocoadocs.org/docsets/SwiftMime)
