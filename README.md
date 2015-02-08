@@ -24,8 +24,6 @@ inspired from [mime](https://github.com/broofa/node-mime)
 	});
 	SwiftMime.sharedManager.lookupType("pdf")
 
-## Requirements
-
 ## Installation
 
 SwiftMime is available through [CocoaPods](http://cocoapods.org). To install
