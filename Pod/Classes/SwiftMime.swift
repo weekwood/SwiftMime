@@ -23,7 +23,7 @@ public class SwiftMime{
         return sharedInstance
     }
     
-    func define(map: NSDictionary){
+    public func define(map: NSDictionary){
         
         for type in map{
             var exts: NSArray = type.value as NSArray

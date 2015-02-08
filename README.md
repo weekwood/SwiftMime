@@ -10,8 +10,19 @@ inspired from [mime](https://github.com/broofa/node-mime)
 
 ## Usage
 
+### Basic API
+
     SwiftMime.sharedManager.lookupExtension("text/html")
     SwiftMime.sharedManager.lookupType("pdf")
+
+### define
+
+	SwiftMime.sharedManager.define({
+    'text/x-some-format': ['x-sf', 'x-sft', 'x-sfml'],
+    'application/x-my-type': ['x-mt', 'x-mtt'],
+    // etc ...
+	});
+	SwiftMime.sharedManager.lookupType("pdf")
 
 ## Requirements
 
