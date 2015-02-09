@@ -1,8 +1,9 @@
 
 # SwiftMime
 
-[![Version](https://img.shields.io/cocoapods/v/ObjectiveMime.svg?style=flat)](http://cocoadocs.org/docsets/SwiftMime)
+[![Version](https://img.shields.io/cocoapods/v/SwiftMime.svg?style=flat)](http://cocoadocs.org/docsets/SwiftMime)
 [![Stories in Ready](https://badge.waffle.io/weekwood/SwiftMime.png?label=ready&title=Ready)](https://waffle.io/weekwood/SwiftMime)
+[![Build Status](https://travis-ci.org/weekwood/SwiftMime.svg?branch=master)](https://travis-ci.org/weekwood/SwiftMime)
 
 Comprehensive MIME type mapping API. Includes all 600+ types and 800+ extensions defined by the Apache project, plus additional types submitted by the node.js community.
 
