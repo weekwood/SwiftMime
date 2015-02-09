@@ -1,10 +1,9 @@
-# references:
-# * http://www.objc.io/issue-6/travis-ci.html
-# * https://github.com/supermarin/xcpretty#usage
+language: objective-c
 
-language: swift
-install:
-- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+before_install:
+- export LANG=en_US.UTF-8
+- brew update
+- if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
+
 script:
-- set -o pipefail && xcodebuild test -workspace Example/ObjectiveMime.xcworkspace -scheme ObjectiveMime-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
-- pod lib lint --quick
+- xctool clean test --project SwiftMime.xcodeproj -scheme "SwiftMime" -sdk iphonesimulator8.1 ONLY_ACTIVE_ARCH=NO
