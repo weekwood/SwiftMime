@@ -28,7 +28,6 @@ public class SwiftMime{
         for type in map{
             var exts: NSArray = type.value as NSArray
             if(exts.count == 0){
-                println(type)
             }
             for var index = 0;index < exts.count; ++index {
                 types[exts[index] as NSString] = type.key as? NSString
@@ -58,13 +57,13 @@ public class SwiftMime{
         define(map)
     }
     
-    public func lookupType(path: NSString) -> NSString{
+    public func lookupType(path: NSString) -> NSString!{
         let newPath = path.stringByReplacingOccurrencesOfString(".*[\\.\\/\\\\]", withString: "", options: .RegularExpressionSearch, range: NSMakeRange(0, path.length))
         var ext: NSString = newPath.lowercaseString
         return types[ext]!
     }
     
-    public func lookupExtension(mimeType: NSString) -> NSString{
+    public func lookupExtension(mimeType: NSString) -> NSString!{
         return extensions[mimeType]!
     }
 }

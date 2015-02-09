@@ -17,11 +17,10 @@ inspired from [mime](https://github.com/broofa/node-mime)
 
 ### define
 
-	SwiftMime.sharedManager.define({
-    'text/x-some-format': ['x-sf', 'x-sft', 'x-sfml'],
-    'application/x-my-type': ['x-mt', 'x-mtt'],
-    // etc ...
-	});
+  SwiftMime.sharedManager.define([
+       "text/x-some-format": ["x-sf", "x-sft", "x-sfml"],
+       "application/x-my-type": ["x-mt", "x-mtt"]
+       ])
 	SwiftMime.sharedManager.lookupType("pdf")
 
 ## Installation
