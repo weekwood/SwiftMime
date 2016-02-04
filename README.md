@@ -13,23 +13,23 @@ inspired from [mime](https://github.com/broofa/node-mime)
 
 ### Basic API
 
-    SwiftMime.sharedManager.lookupExtension("text/html")
-    SwiftMime.sharedManager.lookupType("pdf")
+SwiftMime.sharedManager.lookupExtension("text/html")
+SwiftMime.sharedManager.lookupType("pdf")
 
 ### define
 
-  	SwiftMime.sharedManager.define([
-  	"text/x-some-format": ["x-sf", "x-sft", "x-sfml"],
-  	"application/x-my-type": ["x-mt", "x-mtt"]
-  	])
-	SwiftMime.sharedManager.lookupType("pdf")
+SwiftMime.sharedManager.define([
+"text/x-some-format": ["x-sf", "x-sft", "x-sfml"],
+"application/x-my-type": ["x-mt", "x-mtt"]
+])
+SwiftMime.sharedManager.lookupType("pdf")
 
 ## Installation
 
 SwiftMime is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-    pod "SwiftMime"
+pod "SwiftMime"
 
 ## Author
 
