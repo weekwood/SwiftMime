@@ -57,13 +57,13 @@ public class SwiftMime{
         define(map)
     }
     
-    public func lookupType(path: NSString) -> NSString!{
+    public func lookupType(path: NSString) -> NSString? {
         let newPath = path.stringByReplacingOccurrencesOfString(".*[\\.\\/\\\\]", withString: "", options: .RegularExpressionSearch, range: NSMakeRange(0, path.length))
         let ext: NSString = newPath.lowercaseString
-        return types[ext]!
+        return types[ext]
     }
     
-    public func lookupExtension(mimeType: NSString) -> NSString!{
-        return extensions[mimeType]!
+    public func lookupExtension(mimeType: NSString) -> NSString? {
+        return extensions[mimeType]
     }
 }
