@@ -1,0 +1,6 @@
+framework module Pods_SwiftMime_Tests {
+  umbrella header "Pods-SwiftMime_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
