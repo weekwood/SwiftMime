@@ -1,0 +1,14 @@
+PODS:
+  - SwiftMime (0.3.1)
+
+DEPENDENCIES:
+  - SwiftMime (from `../`)
+
+EXTERNAL SOURCES:
+  SwiftMime:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SwiftMime: c496d73710bc927546a2d16c08ffb3f43dcec69e
+
+COCOAPODS: 0.39.0
