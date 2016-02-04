@@ -37,4 +37,8 @@ class SwiftMimeTests: XCTestCase {
         XCTAssertEqual(SwiftMime.sharedManager.lookupType("x-mtt"), "application/x-my-type", "pass")
     }
     
+    
+    func testUnknownLookupType() {
+        XCTAssertEqual(SwiftMime.sharedManager.lookupType("unknown"), nil, "pass")
+    }
 }
