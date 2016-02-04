@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
 s.name             = "SwiftMime"
-s.version          = "0.3.0"
+s.version          = "0.3.1"
 s.summary          = "inspired from node-mime."
 s.homepage         = "https://github.com/weekwood/SwiftMime"
 s.license          = 'MIT'
