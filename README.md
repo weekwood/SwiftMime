@@ -9,32 +9,43 @@ Comprehensive MIME type mapping API. Includes all 600+ types and 800+ extensions
 
 inspired from [mime](https://github.com/broofa/node-mime)
 
-## Usage
+### Usage
 
-### Basic API
+#### Basic API
 
-    SwiftMime.sharedManager.lookupExtension("text/html")
-    SwiftMime.sharedManager.lookupType("pdf")
+```swift
+SwiftMime.sharedManager.lookupExtension("text/html")
+SwiftMime.sharedManager.lookupType("pdf")
+```
 
-### define
+#### Custom mime type
 
-  	SwiftMime.sharedManager.define([
-  	"text/x-some-format": ["x-sf", "x-sft", "x-sfml"],
+```swift
+SwiftMime.sharedManager.define([
+	"text/x-some-format": ["x-sf", "x-sft", "x-sfml"],
   	"application/x-my-type": ["x-mt", "x-mtt"]
-  	])
-	SwiftMime.sharedManager.lookupType("pdf")
+])
+SwiftMime.sharedManager.lookupType("pdf")
+```
+### Installation
 
-## Installation
+#### [Carthage](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application)
+Add the following to your Cartfile:
 
-SwiftMime is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+```ogdl
+github "weekwood/SwiftMime"
+```
+#### [CocoaPods](http://cocoapods.org)
+Add the following to your [Podfile](http://guides.cocoapods.org/using/the-podfile.html):
 
-    pod "SwiftMime"
+```ruby
+pod 'SwiftMime'
+```
 
-## Author
+### Author
 
 di wu, di.wu@me.com
 
-## License
+### License
 
 SwiftMime is available under the MIT license. See the LICENSE file for more info.
