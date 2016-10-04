@@ -10,60 +10,55 @@
 
 import Foundation
 
-private let sharedInstance = SwiftMime()
+public class SwiftMime {
 
-public class SwiftMime{
-    
-    var types = [NSString: NSString]()
-    var extensions = [NSString: NSString]()
-    
-    public class var sharedManager : SwiftMime {
-        sharedInstance.loadTypesFile("mime")
-        sharedInstance.loadTypesFile("node")
-        return sharedInstance
+    public static let sharedManager = SwiftMime()
+
+    private var typeForExtension = [String: String]()
+    private var extensionForType = [String: String]()
+
+    private init() {
+        loadTypesFile(filePath: "mime")
+        loadTypesFile(filePath: "node")
     }
-    
-    public func define(map: NSDictionary){
-        
-        for type in map{
-            let exts: NSArray = type.value as! NSArray
-            if(exts.count == 0){
+
+    public func define(extensionsForType: [String: [String]]) {
+        for (type, extensions) in extensionsForType {
+            for ext in extensions {
+                typeForExtension[ext] = type
             }
-            for var index = 0;index < exts.count; ++index {
-                types[exts[index] as! NSString] = type.key as? NSString
-            }
-            
-            extensions[type.key as! NSString] = exts[0] as? NSString;
+            extensionForType[type] = extensions[0]
         }
     }
-    
-    func loadTypesFile(filePath: String){
-        let path =  NSBundle(forClass: object_getClass(self)).pathForResource(filePath, ofType: "types")
-        let possibleContent = try? NSString(contentsOfFile:path!, encoding: NSUTF8StringEncoding)
-        var lines = NSArray()
-        let map = NSMutableDictionary()
-        if let content = possibleContent {
-            lines = content.componentsSeparatedByString("\n")
-        }
-        for line in lines{
-            if line.hasPrefix("#"){
+
+    private func loadTypesFile(filePath: String) {
+        let path =  Bundle(for: object_getClass(self)).path(forResource: filePath, ofType: "types")
+        guard let content = try? NSString(contentsOfFile:path!, encoding: String.Encoding.utf8.rawValue) else { return }
+
+        var extensionsForType = [String: [String]]()
+        let lines = content.components(separatedBy: "\n")
+        for line in lines {
+            if line.hasPrefix("#") {
                 continue
             }
-            let fields: NSArray = line.stringByReplacingOccurrencesOfString("\\s+", withString:" ", options: .RegularExpressionSearch, range: NSMakeRange(0, line.length)).componentsSeparatedByString(" ")
-            if fields.firstObject?.length>0 {
-                map[fields.firstObject as! NSString] = fields.subarrayWithRange(NSMakeRange(1, fields.count-1))
+            
+            let fields = line.replacingOccurrences(of: "\\s+", with: " ", options: .regularExpression).components(separatedBy: " ")
+            
+            if let type = fields.first , !type.isEmpty && fields.count > 1 {
+                extensionsForType[type] = Array(fields[1 ..< fields.count])
             }
         }
-        define(map)
+        define(extensionsForType: extensionsForType)
     }
-    
-    public func lookupType(path: NSString) -> NSString? {
-        let newPath = path.stringByReplacingOccurrencesOfString(".*[\\.\\/\\\\]", withString: "", options: .RegularExpressionSearch, range: NSMakeRange(0, path.length))
-        let ext: NSString = newPath.lowercaseString
-        return types[ext]
+
+    public func lookupType(path: String) -> String? {
+        let newPath = path.replacingOccurrences(of: ".*[\\.\\/\\\\]", with: "", options: .regularExpression)
+
+        let ext = newPath.lowercased()
+        return typeForExtension[ext]
     }
-    
-    public func lookupExtension(mimeType: NSString) -> NSString? {
-        return extensions[mimeType]
+
+    public func lookupExtension(mimeType: String) -> String? {
+        return extensionForType[mimeType]
     }
 }
