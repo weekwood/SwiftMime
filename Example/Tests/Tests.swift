@@ -21,24 +21,10 @@ class SwiftMimeTests: XCTestCase {
     }
     
     func testLookupType() {
-        XCTAssertEqual(SwiftMime.sharedManager.lookupType("txt"), "text/plain", "pass")
+        XCTAssertEqual(SwiftMime.mime("txt"), "text/plain", "pass")
     }
     
     func testLookupExtension() {
-        XCTAssertEqual(SwiftMime.sharedManager.lookupExtension("application/atom+xml"), "atom", "pass")
-    }
-    
-    func testDefine() {
-        SwiftMime.sharedManager.define([
-            "text/x-some-format": ["x-sf", "x-sft", "x-sfml"],
-            "application/x-my-type": ["x-mt", "x-mtt"]
-            ])
-        XCTAssertEqual(SwiftMime.sharedManager.lookupExtension("application/x-my-type"), "x-mt", "pass")
-        XCTAssertEqual(SwiftMime.sharedManager.lookupType("x-mtt"), "application/x-my-type", "pass")
-    }
-    
-    
-    func testUnknownLookupType() {
-        XCTAssertEqual(SwiftMime.sharedManager.lookupType("unknown"), nil, "pass")
+        XCTAssertEqual(SwiftMime.ext("application/atom+xml"), "atom", "pass")
     }
 }

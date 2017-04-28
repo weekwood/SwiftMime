@@ -10,19 +10,18 @@
 
 import Foundation
 
-public class SwiftMime {
+open class SwiftMime {
 
-    public static let sharedManager = SwiftMime()
+    open static let sharedManager = SwiftMime()
 
-    private var typeForExtension = [String: String]()
-    private var extensionForType = [String: String]()
+    fileprivate var typeForExtension = [String: String]()
+    fileprivate var extensionForType = [String: String]()
 
-    private init() {
-        loadTypesFile(filePath: "mime")
-        loadTypesFile(filePath: "node")
+    fileprivate init() {
+        loadTypesFile("types")
     }
 
-    public func define(extensionsForType: [String: [String]]) {
+    open func define(_ extensionsForType: [String: [String] ]) {
         for (type, extensions) in extensionsForType {
             for ext in extensions {
                 typeForExtension[ext] = type
@@ -31,34 +30,28 @@ public class SwiftMime {
         }
     }
 
-    private func loadTypesFile(filePath: String) {
-        let path =  Bundle(for: object_getClass(self)).path(forResource: filePath, ofType: "types")
-        guard let content = try? NSString(contentsOfFile:path!, encoding: String.Encoding.utf8.rawValue) else { return }
-
-        var extensionsForType = [String: [String]]()
-        let lines = content.components(separatedBy: "\n")
-        for line in lines {
-            if line.hasPrefix("#") {
-                continue
+    fileprivate func loadTypesFile(_ filePath: String) {
+        do {
+            let path =  Bundle(for: type(of: self)).path(forResource: filePath, ofType: "json") ?? ""
+            let data = try Data(contentsOf: URL(fileURLWithPath: path))
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            if let object = json as? [String: [String]] {
+                // json is a dictionary
+                define(object)
             }
-            
-            let fields = line.replacingOccurrences(of: "\\s+", with: " ", options: .regularExpression).components(separatedBy: " ")
-            
-            if let type = fields.first , !type.isEmpty && fields.count > 1 {
-                extensionsForType[type] = Array(fields[1 ..< fields.count])
-            }
+        } catch {
+             assert(true, (error.localizedDescription))
         }
-        define(extensionsForType: extensionsForType)
     }
 
-    public func lookupType(path: String) -> String? {
+    open class func mime(_ path: String) -> String? {
         let newPath = path.replacingOccurrences(of: ".*[\\.\\/\\\\]", with: "", options: .regularExpression)
 
         let ext = newPath.lowercased()
-        return typeForExtension[ext]
+        return SwiftMime.sharedManager.typeForExtension[ext]
     }
 
-    public func lookupExtension(mimeType: String) -> String? {
-        return extensionForType[mimeType]
+    open class func ext(_ mimeType: String) -> String? {
+        return SwiftMime.sharedManager.extensionForType[mimeType]
     }
 }

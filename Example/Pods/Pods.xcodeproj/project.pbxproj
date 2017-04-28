@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		318C2EC9845F5ECEDF52A4EF88119B56 /* mime.types in Resources */ = {isa = PBXBuildFile; fileRef = F69718C118F13491618550EFFEC95826 /* mime.types */; };
-		3C0FE04770E22E88C062E51226CF6BB6 /* node.types in Resources */ = {isa = PBXBuildFile; fileRef = 6E0F9ABD1F85F639811A68421E5CACEE /* node.types */; };
 		45CBF814FC16926038DEF064AAA59E56 /* SwiftMime-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7576FA73B62A047C5736ABF73F461 /* SwiftMime-dummy.m */; };
 		4E9B0C2927A037A746A6966ECA5680E5 /* SwiftMime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB711D9B766E4A754FCA87B23BD2218 /* SwiftMime.swift */; };
+		504F244C1EB309DA0031C23D /* types.json in Resources */ = {isa = PBXBuildFile; fileRef = 504F244B1EB309DA0031C23D /* types.json */; };
 		55B8F4214B93BCE89ADE53B12E715298 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		6749D6CD52E17BDFACA331E10E0D3980 /* SwiftMime-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D6DFFF280F5D8AF5B4F2D63168E54DD /* SwiftMime-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7975921D41D951C4C325DDF4A65E699D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
@@ -34,8 +33,8 @@
 		3CA7576FA73B62A047C5736ABF73F461 /* SwiftMime-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftMime-dummy.m"; sourceTree = "<group>"; };
 		3D6DFFF280F5D8AF5B4F2D63168E54DD /* SwiftMime-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftMime-umbrella.h"; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		504F244B1EB309DA0031C23D /* types.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = types.json; sourceTree = "<group>"; };
 		56F4CB4721D2B44B0E90928C38AC768C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6E0F9ABD1F85F639811A68421E5CACEE /* node.types */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = node.types; sourceTree = "<group>"; };
 		7791263DEC8266824066DE8531903D8B /* Pods_SwiftMime_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftMime_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		999148A423D5485EC8CD7831AA946763 /* Pods-SwiftMime_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftMime_Tests-dummy.m"; sourceTree = "<group>"; };
 		9F588EAE6B93E17AE33A4370F42B92A5 /* Pods-SwiftMime_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftMime_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -50,7 +49,6 @@
 		E8EF783ECF6A7CDC7C44FD0042D734DB /* Pods-SwiftMime_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftMime_Tests-umbrella.h"; sourceTree = "<group>"; };
 		EDF5E8E691F268A8E2270D7A11ABDFDC /* Pods-SwiftMime_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftMime_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F212275D326B0AAD41BF466084D4C0E3 /* SwiftMime-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftMime-prefix.pch"; sourceTree = "<group>"; };
-		F69718C118F13491618550EFFEC95826 /* mime.types */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = mime.types; sourceTree = "<group>"; };
 		FD816FD30826AFCE22AD649BA2DEE0A6 /* Pods-SwiftMime_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftMime_Tests-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,8 +107,7 @@
 		500A876C08132C7DD13779D99F2B4384 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				F69718C118F13491618550EFFEC95826 /* mime.types */,
-				6E0F9ABD1F85F639811A68421E5CACEE /* node.types */,
+				504F244B1EB309DA0031C23D /* types.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -275,7 +272,15 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0830;
+				TargetAttributes = {
+					1625362C0C49E115012305AA6D105DF3 = {
+						LastSwiftMigration = 0830;
+					};
+					A3EF895BF701EF536CC08ACEE1946C5E = {
+						LastSwiftMigration = 0830;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -300,8 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				318C2EC9845F5ECEDF52A4EF88119B56 /* mime.types in Resources */,
-				3C0FE04770E22E88C062E51226CF6BB6 /* node.types in Resources */,
+				504F244C1EB309DA0031C23D /* types.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,13 +354,17 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -366,6 +374,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -375,7 +384,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 214FB7B66E87F8C84603403310D966DD /* SwiftMime.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -393,6 +402,7 @@
 				PRODUCT_NAME = SwiftMime;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -412,14 +422,18 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -443,7 +457,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EDF5E8E691F268A8E2270D7A11ABDFDC /* Pods-SwiftMime_Tests.release.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -464,6 +479,7 @@
 				PRODUCT_NAME = Pods_SwiftMime_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -474,7 +490,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 214FB7B66E87F8C84603403310D966DD /* SwiftMime.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -493,6 +509,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -503,7 +520,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F588EAE6B93E17AE33A4370F42B92A5 /* Pods-SwiftMime_Tests.debug.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -525,6 +543,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

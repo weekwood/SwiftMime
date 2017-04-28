@@ -14,19 +14,10 @@ inspired from [mime](https://github.com/broofa/node-mime)
 #### Basic API
 
 ```swift
-SwiftMime.sharedManager.lookupExtension("text/html")
-SwiftMime.sharedManager.lookupType("pdf")
+SwiftMime.ext("text/html")
+SwiftMime.mime("pdf")
 ```
 
-#### Custom mime type
-
-```swift
-SwiftMime.sharedManager.define([
-	"text/x-some-format": ["x-sf", "x-sft", "x-sfml"],
-  	"application/x-my-type": ["x-mt", "x-mtt"]
-])
-SwiftMime.sharedManager.lookupType("pdf")
-```
 ### Installation
 
 #### [Carthage](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application)

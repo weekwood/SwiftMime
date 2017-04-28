@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1625362C0C49E115012305AA6D105DF3"
-               BuildableName = "SwiftMime.framework"
-               BlueprintName = "SwiftMime"
+               BlueprintIdentifier = "A3EF895BF701EF536CC08ACEE1946C5E"
+               BuildableName = "Pods_SwiftMime_Tests.framework"
+               BlueprintName = "Pods-SwiftMime_Tests"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1625362C0C49E115012305AA6D105DF3"
-            BuildableName = "SwiftMime.framework"
-            BlueprintName = "SwiftMime"
+            BlueprintIdentifier = "A3EF895BF701EF536CC08ACEE1946C5E"
+            BuildableName = "Pods_SwiftMime_Tests.framework"
+            BlueprintName = "Pods-SwiftMime_Tests"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -60,6 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "A3EF895BF701EF536CC08ACEE1946C5E"
+            BuildableName = "Pods_SwiftMime_Tests.framework"
+            BlueprintName = "Pods-SwiftMime_Tests"
+            ReferencedContainer = "container:Pods.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
