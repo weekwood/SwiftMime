@@ -10,18 +10,18 @@
 
 import Foundation
 
-open class SwiftMime {
+public class SwiftMime {
 
-    open static let sharedManager = SwiftMime()
+    static let sharedManager = SwiftMime()
 
-    fileprivate var typeForExtension = [String: String]()
-    fileprivate var extensionForType = [String: String]()
+    var typeForExtension = [String: String]()
+    var extensionForType = [String: String]()
 
-    fileprivate init() {
+    init() {
         loadTypesFile("types")
     }
 
-    open func define(_ extensionsForType: [String: [String] ]) {
+    func define(_ extensionsForType: [String: [String] ]) {
         for (type, extensions) in extensionsForType {
             for ext in extensions {
                 typeForExtension[ext] = type
@@ -30,13 +30,12 @@ open class SwiftMime {
         }
     }
 
-    fileprivate func loadTypesFile(_ filePath: String) {
+    func loadTypesFile(_ filePath: String) {
         do {
-            let path =  Bundle(for: type(of: self)).path(forResource: filePath, ofType: "json") ?? ""
+            let path = Bundle(for: type(of: self)).path(forResource: filePath, ofType: "json") ?? ""
             let data = try Data(contentsOf: URL(fileURLWithPath: path))
             let json = try JSONSerialization.jsonObject(with: data, options: [])
             if let object = json as? [String: [String]] {
-                // json is a dictionary
                 define(object)
             }
         } catch {
@@ -44,14 +43,14 @@ open class SwiftMime {
         }
     }
 
-    open class func mime(_ path: String) -> String? {
-        let newPath = path.replacingOccurrences(of: ".*[\\.\\/\\\\]", with: "", options: .regularExpression)
+    public class func mime(_ path: String) -> String? {
+        let newPath = path.replacingOccurrences(of: ".*[\\.\\/\\\\]", with: "")
 
         let ext = newPath.lowercased()
         return SwiftMime.sharedManager.typeForExtension[ext]
     }
 
-    open class func ext(_ mimeType: String) -> String? {
+    public class func ext(_ mimeType: String) -> String? {
         return SwiftMime.sharedManager.extensionForType[mimeType]
     }
 }
